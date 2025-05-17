@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Unit 1: Bonjour! Quiz</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      padding: 20px;
+      background-color: #f0f8ff;
+    }
+    .question-block {
+      margin-bottom: 20px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background-color: #fff;
+    }
+    .question-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .result {
+      font-size: 18px;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🎓 Unit 1: Bonjour ! – Interactive Quiz</h1>
+
+<form id="quizForm">
+  <div class="question-block">
+    <div class="question-title">1. What is the French word for "Hello"?</div>
+    <label><input type="radio" name="q1" value="B"> A. Salut</label><br />
+    <label><input type="radio" name="q1" value="correct"> B. Bonjour</label><br />
+    <label><input type="radio" name="q1" value="C"> C. Merci</label>
+  </div>
+
+  <div class="question-block">
+    <div class="question-title">2. How do you say "Good night" in French?</div>
+    <label><input type="radio" name="q2" value="correct"> A. Bonne nuit</label><br />
+    <label><input type="radio" name="q2" value="B"> B. Au revoir</label><br />
+    <label><input type="radio" name="q2" value="C"> C. Salut</label>
+  </div>
+
+  <div class="question-block">
+    <div class="question-title">3. Which greeting is used when leaving someone?</div>
+    <label><input type="radio" name="q3" value="B"> A. Bonjour</label><br />
+    <label><input type="radio" name="q3" value="correct"> B. À bientôt</label><br />
+    <label><input type="radio" name="q3" value="C"> C. Bonsoir</label>
+  </div>
+
+  <div class="question-block">
+    <div class="question-title">4. What does "Ça va ?" mean?</div>
+    <label><input type="radio" name="q4" value="correct"> A. How are you?</label><br />
+    <label><input type="radio" name="q4" value="B"> B. See you later</label><br />
+    <label><input type="radio" name="q4" value="C"> C. Good morning</label>
+  </div>
+
+  <div class="question-block">
+    <div class="question-title">5. Which of these means "See you soon"?</div>
+    <label><input type="radio" name="q5" value="A"> A. Au revoir</label><br />
+    <label><input type="radio" name="q5" value="correct"> B. À bientôt</label><br />
+    <label><input type="radio" name="q5" value="C"> C. Merci</label>
+  </div>
+
+  <div class="question-block">
+    <div class="question-title">6. What is the correct response to "Comment ça va ?" if you're doing well?</div>
+    <label><input type="radio" name="q6" value="A"> A. Ça va mal</label><br />
+    <label><input type="radio" name="q6" value="correct"> B. Moi, ça va bien</label><br />
+    <label><input type="radio" name="q6" value="C"> C. Je suis fatigué</label>
+  </div>
+
+  <div class="question-block">
+    <div class="question-title">7. What does "Salut" mean?</div>
+    <label><input type="radio" name="q7" value="A"> A. Thank you</label><br />
+    <label><input type="radio" name="q7" value="C"> B. Goodbye</label><br />
+    <label><input type="radio" name="q7" value="correct"> C. Hi</label>
+  </div>
+
+  <div class="question-block">
+    <div class="question-title">8. Which of these greetings is used during the day to say hello?</div>
+    <label><input type="radio" name="q8" value="correct"> A. Bonjour</label><br />
+    <label><input type="radio" name="q8" value="B"> B. Bonne nuit</label><br />
+    <label><input type="radio" name="q8" value="C"> C. À demain</label>
+  </div>
+
+  <div class="question-block">
+    <div class="question-title">9. If someone says "Au revoir", what do they mean?</div>
+    <label><input type="radio" name="q9" value="A"> A. Hello</label><br />
+    <label><input type="radio" name="q9" value="B"> B. Good night</label><br />
+    <label><input type="radio" name="q9" value="correct"> C. Goodbye</label>
+  </div>
+
+  <div class="question-block">
+    <div class="question-title">10. Which of the following greetings is best used at bedtime?</div>
+    <label><input type="radio" name="q10" value="correct"> A. Bonne nuit</label><br />
+    <label><input type="radio" name="q10" value="B"> B. Bonjour</label><br />
+    <label><input type="radio" name="q10" value="C"> C. Salut</label>
+  </div>
+
+  <button type="button" onclick="checkAnswers()">Check My Answers</button>
+  <div class="result" id="resultBox"></div>
+</form>
+
+<script>
+  function checkAnswers() {
+    const form = document.forms.quizForm;
+    let score = 0;
+    for (let i = 1; i <= 10; i++) {
+      if (form[`q${i}`].value === "correct") {
+        score++;
+      }
+    }
+    document.getElementById("resultBox").innerText = `You scored ${score} out of 10! 🎉`;
+  }
+</script>
+
+</body>
+</html>
